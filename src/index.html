@@ -45,7 +45,7 @@
           <svg class="icon">
             <use xlink:href="/images/sprite.symbol.svg#search"></use>
           </svg>
-          <span class="visually">Search</span>
+          <span class="visually-hidden">Search</span>
         </a>
         <button id="global-nav-toggle">
           <svg class="icon">
@@ -54,13 +54,29 @@
           <span class="visually-hidden">Open</span> Menu
         </button>
       </div>
+      <!-- global nav -->
+      <nav class="global-nav visually-hidden">
+        <h2 class="global-nav__section-heading">Explore this Park</h2>
+        <ul class="global-nav__list">
+          <li>
+            <div class="global-nav__split-button">
+              <a href="#">Plan Your Visit</a>
+              <button class="global-nav__split-button__toggle">
+                <span class="visually-hidden">Toggle submenu for Plan Your Visit</span>
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </section>
 
     <!-- park header -->
     <section id="park-header">
       <div class="hero-banner">
-        <img src="https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg"
-          alt="park header image" />
+        <img src="#" alt="park header image" />
         <div class="hero-banner__content">
           <!-- park info goes here... -->
         </div>
@@ -111,8 +127,21 @@
       </nav>
     </section>
   </header>
-  <main id="main"></main>
-  <footer id="park-footer"></footer>
+
+  <!-- main -->
+  <main id="main">
+    <div class="text-content container">
+      <!-- intro text goes here -->
+    </div>
+    <div class="figure-container">
+      <!-- media cards go here -->
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="park-footer">
+    <!-- footer goes here  -->
+  </footer>
 </body>
 
 </html>

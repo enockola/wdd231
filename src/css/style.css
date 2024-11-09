@@ -110,6 +110,10 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
+.container {
+  padding: 0 1rem;
+}
+
 /* Skip links styling */
 .skip-links ul {
   list-style-type: none;
@@ -292,4 +296,63 @@ svg {
 .park-nav svg {
   width: 24px;
   height: 24px;
+}
+
+/* main stylings */
+
+.text-content h1 {
+  font-family: var(--bs-font-serif);
+}
+
+.figure-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.figure-content {
+  text-decoration: none;
+  color: var(--bs-black) !important;
+  margin: auto;
+  max-width: 350px;
+  padding: 1rem;
+  border: 1px;
+}
+
+.figure-content h2 {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-weight: var(--bs-font-weight);
+}
+
+.figure-content p {
+  margin: 1rem 0;
+}
+
+/* park footer stylings */
+#park-footer {
+  background-image: url(../images/topo_pattern.png);
+  margin: 0;
+  padding: 1rem 0;
+}
+
+#park-footer p {
+  text-transform: uppercase;
+  font-family: var(--bs-font-serif);
+  font-weight: var(--bs-font-weight);
+}
+
+#park-footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#park-footer ul li {
+  font-weight: var(--bs-font-weight);
+}
+
+#park-footer ul li a {
+  font-weight: var(--bs-body-font-weight);
+  text-decoration: none;
+  color: var(--bs-body-color);
 }
