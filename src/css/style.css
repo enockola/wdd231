@@ -1,4 +1,8 @@
 :root {
+  --alert-closure: #cb2027;
+  --alert-caution: #ed7e31;
+  --alert-information: #2451a9;
+  --alert-danger: #720f04;
   --bs-black: #000;
   --bs-brown: #393423;
   --bs-grey-2: #444;
@@ -173,8 +177,24 @@ a:hover {
   overflow: hidden;
 }
 
+.alert-information {
+  color: var(--alert-information);
+}
+
+.alert-danger {
+  color: var(--alert-danger);
+}
+
+.alert-closure {
+  color: var(--alert-closure);
+}
+
+.alert-caution {
+  color: var(--alert-caution);
+}
+
 svg {
-  background-color: var(--bs-black);
+  background-color: transparent;
   fill: white;
 }
 
@@ -299,6 +319,9 @@ svg {
 }
 
 /* main stylings */
+main {
+  padding: 1rem 0;
+}
 
 .text-content h1 {
   font-family: var(--bs-font-serif);
@@ -355,4 +378,45 @@ svg {
   font-weight: var(--bs-body-font-weight);
   text-decoration: none;
   color: var(--bs-body-color);
+}
+
+/* conditonal stylings */
+details {
+  border: 1px solid var(--bs-body-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+section ul {
+  padding-left: 0;
+}
+
+.alert {
+  padding: 1rem 0;
+  line-height: 1.7rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.alert h3, p {
+  margin: 0;
+}
+
+.alert svg {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.visitor {
+  list-style: none;
+}
+
+.visitor h3, p {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.activity {
+  margin-left: 1rem;
 }

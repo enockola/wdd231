@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>[Park Name]</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/conditions.js"></script>
 </head>
 
 <body>
@@ -33,6 +33,7 @@
       </li>
     </ul>
   </div>
+  <!-- header -->
   <header>
     <!-- global header -->
     <section class="global-header">
@@ -130,12 +131,31 @@
 
   <!-- main -->
   <main id="main">
-    <div class="text-content container">
-      <!-- intro text goes here -->
-    </div>
-    <div class="figure-container">
-      <!-- media cards go here -->
-    </div>
+    <h1 class="container">Current Conditions</h1>
+    <section id="alerts" class="container">
+      <h2>Alerts</h2>
+      <ul>
+        <!-- alerts goes here -->
+      </ul>
+    </section>
+    <section class="visitor-center container">
+      <h2>Visitor Services</h2>
+      <details name="current-details">
+        <summary>Visitor Centers</summary>
+        <ul>
+          <!-- visitor centers goes here -->
+        </ul>
+      </details>
+    </section>
+    <section class="activities container">
+      <h2>Activities</h2>
+      <details name="current-details">
+        <summary>All Activities</summary>
+        <ul>
+          <!-- activities goes here -->
+        </ul>
+      </details>
+    </section>
   </main>
 
   <!-- footer -->

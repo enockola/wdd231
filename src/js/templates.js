@@ -34,7 +34,7 @@ export function getInfoLinks(data) {
   return withUpdatedImages;
 }
 
-export function setParkIntroTemplate(data) {
+export function setParkHeaderTemplate(data) {
   return `
       <a href="/" class="hero-banner__title">${data.name}</a>
       <p class="hero-banner__subtitle">
@@ -84,4 +84,42 @@ export function setParkFooterTemplate(info) {
           </li>
         </ul>
       </div>`;
+}
+
+export function setAlertTemplate(alert) {
+  let alertType = "";
+  switch (alert.category) {
+    case "Park Closure":
+      alertType = "closure";
+      break;
+    default:
+      alertType = alert.category.toLowerCase();
+  }
+  return `
+    <li class="alert">
+      <svg class="icon" focusable="false" aria-hidden="true">
+        <use xlink:href="/images/sprite.symbol.svg#alert-${alertType}"></use>
+      </svg>
+      <div>
+        <h3 class="alert-${alertType}">${alert.title}</h3>
+        <p>${alert.description}</p>
+      </div>
+    </li>
+  `
+}
+
+export function setVisitorCenterTemplate(visitorCenter) {
+  return `
+    <li class="visitor">
+      <h3>${visitorCenter.name}</h3>
+      <p>${visitorCenter.description}</p>
+      <p>${visitorCenter.directionsInfo}</p>
+    </li>
+  `
+}
+
+export function setActivitiesTemplate(activities) {
+  return `
+    <li class="activity">${activities.name}</li>
+  `
 }
