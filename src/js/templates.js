@@ -1,3 +1,6 @@
+//add this at the top of the file
+import spritePath from '../images/sprite.symbol.svg';
+
 export function getMailingAddress(addresses) {
   return addresses.find((address) => address.type === "Mailing");
 }
@@ -98,7 +101,7 @@ export function setAlertTemplate(alert) {
   return `
     <li class="alert">
       <svg class="icon" focusable="false" aria-hidden="true">
-        <use xlink:href="/images/sprite.symbol.svg#alert-${alertType}"></use>
+        <use xlink:href="${spritePath}#alert-${alertType}"></use>
       </svg>
       <div>
         <h3 class="alert-${alertType}">${alert.title}</h3>
