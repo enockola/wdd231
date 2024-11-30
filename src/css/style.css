@@ -201,6 +201,7 @@ svg {
 /* global nav styling */
 
 .global-header {
+  position: relative;
   background-color: var(--bs-black);
   color: white;
   display: flex;
@@ -245,6 +246,69 @@ svg {
   gap: 4px;
   align-items: center;
   border-left: 1px solid var(--bs-grey-5);
+}
+
+.global-nav {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  grid-column: 1/3;
+  border-top: 1px solid #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  background-color: black;
+}
+
+.global-nav__section-heading {
+  padding-left: .6rem;
+}
+
+.global-nav__list{
+  padding-left: 2rem;
+}
+
+.global-nav__split-button {
+  display: flex;
+  align-items:center;
+}
+
+.global-nav__list .icon{
+  width: 25px;
+  height: 25px;
+}
+
+.global-nav button {
+  background-color: transparent;
+  border: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.global-nav svg {
+  --icon-color: white;
+}
+
+.global-nav__toggle--closed {
+  display: flex;
+  align-items: center;
+}
+
+.global-nav__toggle--open {
+  display: none;
+  align-items: center;
+}
+
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--closed {
+  display: none;
+}
+
+.global-nav__toggle[aria-expanded="true"] .global-nav__toggle--open {
+  display: flex;
+}
+
+.global-nav.show {
+  max-height: 1000px;
 }
 
 /* Hero banner */
@@ -399,7 +463,8 @@ section ul {
   gap: 1rem;
 }
 
-.alert h3, p {
+.alert h3,
+p {
   margin: 0;
 }
 
@@ -412,7 +477,8 @@ section ul {
   list-style: none;
 }
 
-.visitor h3, p {
+.visitor h3,
+p {
   margin: 0;
   padding: 0.5rem 0;
 }

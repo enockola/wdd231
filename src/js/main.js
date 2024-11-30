@@ -1,5 +1,5 @@
 import { getParkData } from "./parkService.mjs";
-import { setHeaderFooter } from "./setHeaderFooter.mjs";
+import { setHeaderFooter, enableNavigation } from "./setHeaderFooter.mjs";
 import {
   getInfoLinks,
   setParkInfoTemplate,
@@ -16,6 +16,7 @@ async function init() {
   const links = getInfoLinks(parkData.images);
   setHeaderFooter(parkData);
   setParkMain(parkData, links);
+  enableNavigation();
 }
 
 init();

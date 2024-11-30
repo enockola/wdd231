@@ -108,7 +108,7 @@ export function setAlertTemplate(alert) {
         <p>${alert.description}</p>
       </div>
     </li>
-  `
+  `;
 }
 
 export function setVisitorCenterTemplate(visitorCenter) {
@@ -118,11 +118,11 @@ export function setVisitorCenterTemplate(visitorCenter) {
       <p>${visitorCenter.description}</p>
       <p>${visitorCenter.directionsInfo}</p>
     </li>
-  `
+  `;
 }
 
 export function setActivitiesTemplate(activities) {
   return `
     <li class="activity">${activities.name}</li>
-  `
+  `;
 }
