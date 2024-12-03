@@ -264,18 +264,60 @@ svg {
   padding-left: .6rem;
 }
 
-.global-nav__list{
-  padding-left: 2rem;
+
+.global-nav__list div > li{
+  list-style: none;
+  background-color: var(--bs-gray-800);
+ padding-left: .5rem;
 }
 
 .global-nav__split-button {
   display: flex;
+  justify-content: space-between;
   align-items:center;
 }
 
+.global-nav__split-button__toggle {
+  border-left: 1px solid #444 !important;
+}
+
+.global-nav__split-button > button:hover,
+.global-nav__split-button > a:hover {
+  background-color: var(--bs-gray-900);
+}
+
+.global-nav__submenu {
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.global-nav__submenu.show__submenu {
+  max-height: fit-content;
+}
+
+.global-nav__submenu .link-header {
+  color: var(--bs-chathams-blue-3) !important;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.global-nav__submenu a {
+  display: block;
+  padding: 1rem 0.625rem;
+}
+.global-nav__submenu a:hover {
+  text-decoration: underline;
+}
+
 .global-nav__list .icon{
+  transition: transform 0.3s ease;
   width: 25px;
   height: 25px;
+}
+
+.icon.rotate {
+  transform: rotate(180deg);
 }
 
 .global-nav button {
@@ -485,4 +527,37 @@ p {
 
 .activity {
   margin-left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .global-nav__section-heading,
+  .global-nav__list > div:first-of-type {
+    display: none;
+  }
+  .global-nav__submenu,
+  .global-nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .global-nav__list div > li{
+    background-color: transparent;
+    font-size: 1.1em;
+    padding: 0.6rem 0;
+  }
+
+.global-nav__split-button > a:hover {
+  background-color: transparent;
+}
+  .global-nav__split-button > button {
+    display: none;
+  }
+  .global-nav__submenu {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+  }
+  .global-nav__submenu a {
+    padding: 0.6rem;
+  }
 }

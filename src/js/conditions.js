@@ -3,7 +3,7 @@ import { getParkAlerts } from "./parkService.mjs";
 import { getVisitorCenterData } from "./parkService.mjs";
 import { getActivitiesData } from "./parkService.mjs";
 import { setAlertTemplate, setVisitorCenterTemplate, setActivitiesTemplate } from "./templates";
-import { setHeaderFooter, enableNavigation } from "./setHeaderFooter.mjs";
+import { setHeaderFooter} from "./setHeaderFooter.mjs";
 
 function setAlerts(alerts) {
     const alertsContainer = document.querySelector("#alerts > ul");
@@ -32,7 +32,6 @@ async function init() {
     setAlerts(alerts);
     setVisitorCenter(visitorCenterData);
     setActivities(activitiesData);
-    enableNavigation();
 }
 
 init();
