@@ -1,57 +1,42 @@
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 const idCode = "glac";
-const options = {
-  method: "GET",
-  headers: {
-    "X-Api-Key": apiKey
+
+async function getJson(endpoint) {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  const response = await fetch(baseUrl + endpoint, options);
+  if (!response.ok) {
+    throw new Error(`Fetch failed: ${response.statusText}`);
   }
-};
+  return response.json();
+}
 
 export async function getParkData() {
-  let data = {};
-  const response = await fetch(baseUrl + "parks" + "?parkCode=" + idCode, options);
-  // check to make sure the reponse was ok.
-  if (response.ok) {
-    // convert to JSON
-    data = await response.json(); 
-  } else throw new Error("response not ok");
-  // return just the first row of the data object
+  const data = await getJson(`parks?parkCode=${idCode}`);
   return data.data[0];
 }
 
 export async function getParkAlerts() {
-  let alerts = {};
-  const response = await fetch(baseUrl + "alerts" + "?parkCode=" + idCode, options);
-  // check to make sure the reponse was ok.
-  if (response.ok) {
-    // convert to JSON
-    alerts = await response.json();
-  } else throw new Error("response not ok");
-  // return just the first row of the data object
+  const alerts = await getJson(`alerts?parkCode=${idCode}`);
   return alerts.data;
 }
 
 export async function getVisitorCenterData() {
-  let visitorCenters = {};
-  const response = await fetch(baseUrl + "visitorcenters" + "?parkCode=" + idCode, options);
-  // check to make sure the reponse was ok.
-  if (response.ok) {
-    // convert to JSON
-    visitorCenters = await response.json();
-  } else throw new Error("response not ok");
-  // return just the first row of the data object
+  const visitorCenters = await getJson(`visitorcenters?parkCode=${idCode}`);
   return visitorCenters.data;
 }
 
 export async function getActivitiesData() {
-  let activities = {};
-  const response = await fetch(baseUrl + "activities" + "?id=" + idCode, options);
-  // check to make sure the reponse was ok.
-  if (response.ok) {
-    // convert to JSON
-    activities = await response.json();
-  } else throw new Error("response not ok");
-  // return just the first row of the data object
+  const activities = await getJson(`activities?id=${idCode}`);
   return activities.data;
+}
+
+export async function getParkVisitorCenterDetails(id) {
+  const centerData = await getJson(`visitorcenters?id=${id}`);
+  return centerData.data[0];
 }

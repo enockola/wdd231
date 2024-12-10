@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic URL Parameter Example</title>
+    <link rel="stylesheet" href="demo.css">
+    <script src="demo.js" defer></script>
+</head>
+
+<body>
+    <h1>Choose a Movie</h1>
+    <ul>
+        <!-- URL parameter work for links; in this link is a query for to get the movie ID -->
+        <li><a href="demo.html?movieId=1">Inception</a></li>
+        <li><a href="demo.html?movieId=2">The Matrix</a></li>
+        <li><a href="demo.html?movieId=3">The Godfather</a></li>
+    </ul>
+    <div class="buttons">
+        <!-- URL parameteer does not work with url param because they require a query in form of a link. -->
+        <button data-id="1">Inception</button>
+        <button data-id="2">The Matrix</button>
+        <button data-id="3">The Godfather</button>
+    </div>
+    <main>
+        <h1>Movie Details</h1>
+        <!-- movie details go here-->
+    </main>
+</body>
+
+</html>
